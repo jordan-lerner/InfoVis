@@ -24,7 +24,7 @@ html {
 }
 </style>
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
 <script>
 
 var margin = {top: 350, right: 480, bottom: 350, left: 480},
@@ -101,7 +101,7 @@ function mouseMoveArc (d) {
 }
 
 var root_ = null;
-d3.json("nhl.json", function(error, root) {
+d3.json("data/nhl.json", function(error, root) {
   if (error) return console.warn(error);
   // Compute the initial layout on the entire tree to sum sizes.
   // Also compute the full name and fill color for each node,

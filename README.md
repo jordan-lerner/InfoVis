@@ -9,3 +9,5 @@ Jordan Lerner
 Kyle Johal
 Brent Cameron
 Brad Fockler
+
+To test the website locally use Mozilla Firefox.
