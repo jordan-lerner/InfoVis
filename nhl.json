@@ -1,0 +1,180 @@
+{
+ "name": "flare",
+ "description": "flare",
+ "children": [
+  {
+   "name": "Atlantic",
+   "description": "Division",
+   "children": [
+    {
+     "name": "Tampa Bay",
+     "description": "Lightning",
+     "size": 1
+    },
+    {
+     "name": "Montreal",
+     "description": "Canadians",
+     "size": 1
+    },
+    {
+     "name": "Detroit",
+     "description": "Red Wings",
+     "size": 1
+    },
+    {
+     "name": "Boston",
+     "description": "Bruins",
+     "size": 1
+    },
+    {
+     "name": "Florida",
+     "description": "Panthers",
+     "size": 1
+    },
+    {
+     "name": "Toronto",
+     "description": "Maple Leafs",
+     "size": 1
+    },
+    {
+     "name": "Ottawa",
+     "description": "Senators",
+     "size": 1
+    },
+    {
+     "name": "Buffalo",
+     "description": "Sabres",
+     "size": 1
+    }
+   ]
+  },
+  {
+   "name": "Metropolitan",
+   "description": "Division",
+   "children": [
+    {
+     "name": "New York I.",
+     "description": "Islanders",
+     "size": 1
+    },
+    {
+     "name": "Pittsburgh",
+     "description": "Penguins",
+     "size": 1
+    },
+    {
+     "name": "Washington",
+     "description": "Capitals",
+     "size": 1
+    },
+    {
+     "name": "New York R.",
+     "description": "Rangers",
+     "size": 1
+    },
+    {
+     "name": "Philadelphia",
+     "description": "Flyers",
+     "size": 1
+    },
+    {
+     "name": "Columbus",
+     "description": "Blue Jackets",
+     "size": 1
+    },
+    {
+     "name": "New Jersey",
+     "description": "Devils",
+     "size": 1
+    },
+    {
+     "name": "Carolina",
+     "description": "Hurricanes",
+     "size": 1
+    }
+   ]
+  },
+  {
+   "name": "Central",
+   "description": "Division",
+   "children": [
+    {
+     "name": "Nashville",
+     "description": "Predators",
+     "size": 1
+    },
+    {
+     "name": "St. Louis",
+     "description": "Blues",
+     "size": 1
+    },
+    {
+     "name": "Chicago",
+     "description": "Blackhawks",
+     "size": 1
+    },
+    {
+     "name": "Winnipeg",
+     "description": "Jets",
+     "size": 1
+    },
+    {
+     "name": "Dallas",
+     "description": "Stars",
+     "size": 1
+    },
+    {
+     "name": "Colorado",
+     "description": "Avalanche",
+     "size": 1
+    },
+    {
+     "name": "Minnesota",
+     "description": "Wild",
+     "size": 1
+    }
+   ]
+  },
+  {
+   "name": "Pacific",
+   "description": "Division",
+   "children": [
+    {
+     "name": "Anaheim",
+     "description": "Ducks",
+     "size": 1
+    },
+    {
+     "name": "Vancouver",
+     "description": "Canucks",
+     "size": 1
+    },
+    {
+     "name": "San Jose",
+     "description": "Sharks",
+     "size": 1
+    },
+    {
+     "name": "Calgary",
+     "description": "Flames",
+     "size": 1
+    },
+    {
+     "name": "Los Angeles",
+     "description": "Kings",
+     "size": 1
+    },
+    {
+     "name": "Arizona",
+     "description": "Coyotes",
+     "size": 1
+    },
+    {
+     "name": "Edmonton",
+     "description": "Oilers",
+     "size": 1
+    }
+   ]
+  }
+  ]
+}
