@@ -37,11 +37,23 @@ html {
 .x.axis path {
   display: none;
 }
+#area1{
+float:left;
+width:49%;
+display: block;
+}
+#area2{
+display: block;
+float:right;
+width:49%;
+}
 
 </style>
+<body>
 <div id="area1"></div>
 <div id="area2"></div>
-<body>
+
+</body>
 <script src="js/d3.v3.min.js"></script>
 <script type="text/javascript">
 
@@ -295,6 +307,12 @@ function updateArc(d) {
 
 d3.select(self.frameElement).style("height", margin.top + margi.bottom + "px");
 
+<!-- **********************-->
+<!-- Bar Chart stuff below -->
+<!-- **********************-->
+
+var playerChart;
+
 function bargraph(passingName){
 	var player = passingName.split(".").slice(-1)
 
@@ -304,7 +322,7 @@ function bargraph(passingName){
 		var csvFile ="data/Burrows.csv";
 	}
 	else{
-		var csvFile ="d";
+		var csvFile ="";
 	}
 	var margin = {top: 20, right: 20, bottom: 30, left: 40},
 		width = 960 - margin.left - margin.right,
@@ -330,7 +348,7 @@ function bargraph(passingName){
 		.orient("left")
 		.tickFormat(d3.format(".2s"));
 
-	var svg = d3.select("#area2").append("svg")
+	playerChart = d3.select("#area2").append("svg")
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
 	  .append("g")
@@ -347,22 +365,22 @@ function bargraph(passingName){
 	  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
 	  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
 
-	  svg.append("g")
+	  playerChart.append("g")
 		  .attr("class", "x axis")
 		  .attr("transform", "translate(0," + height + ")")
 		  .call(xAxis);
 
-	  svg.append("g")
+	  playerChart.append("g")
 		  .attr("class", "y axis")
 		  .call(yAxis)
 		.append("text")
 		  .attr("transform", "rotate(-90)")
-		  .attr("y", 6)
-		  .attr("dy", ".71em")
+		  .attr("y", 10)
+		  .attr("dy", "1em")
 		  .style("text-anchor", "end")
-		  .text("Population");
+		  .text("Player Value");
 
-	  var state = svg.selectAll(".state")
+	  var state = playerChart.selectAll(".state")
 		  .data(data)
 		.enter().append("g")
 		  .attr("class", "g")
@@ -377,7 +395,7 @@ function bargraph(passingName){
 		  .attr("height", function(d) { return height - y(d.value); })
 		  .style("fill", function(d) { return color(d.name); });
 
-	  var legend = svg.selectAll(".legend")
+	  var legend = playerChart.selectAll(".legend")
 		  .data(ageNames.slice().reverse())
 		.enter().append("g")
 		  .attr("class", "legend")
@@ -398,4 +416,5 @@ function bargraph(passingName){
 
 	});
 }
+
 </script>
