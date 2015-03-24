@@ -53,6 +53,7 @@ width:49%;
 }
 </style>
 <body>
+<h1 id="Userlocation">NHL teams</h1>
 <div id="area1"></div>
 <div id="area2"></div>
 
@@ -189,9 +190,11 @@ d3.json("data/nhl.json", function(error, root) {
     .text(function(d,i) {return d.name})
 
   function zoomIn(p) {
+  	passingName = p.key;
+	var Userlocation = document.getElementById("Userlocation");
+	Userlocation.innerHTML = passingName;
     if (p.depth > 1) p = p.parent;
     if (!p.children){
-	passingName = p.key;
 	scatterplotGraph(passingName);
 	return;
 	}
@@ -200,6 +203,9 @@ d3.json("data/nhl.json", function(error, root) {
 
   function zoomOut(p) {
     if (!p.parent) return;
+	passingName = p.key;
+	var Userlocation = document.getElementById("Userlocation");
+	Userlocation.innerHTML = "NHL teams";
     zoom(p.parent, p);
   }
 
@@ -278,7 +284,6 @@ d3.json("data/nhl.json", function(error, root) {
       .text(function(d,i) {return d.name})
     .transition().delay(750).style("opacity", 1)
         
-     
   }
 });
 
@@ -321,7 +326,6 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
     height = 500 - margin.top - margin.bottom;
 
 var TeamStats = passingName.split(".").slice(-1);
-alert(TeamStats);
 /* 
  * value accessor - returns the value to encode for a given data object.
  * scale - maps value to a visual display encoding, such as a pixel position.
@@ -408,8 +412,8 @@ d3.csv("data/"+TeamStats+".csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip.html(d["Player"] + "<br/> (" + xValue(d) 
-	        + ", " + yValue(d) + ")")
+          tooltip.html(d["Player"] + "<br/> (Games played: " + xValue(d) 
+	        + ", SAT: " + yValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
