@@ -7,7 +7,7 @@
    "description": "Division",
    "children": [
     {
-     "name": "Tampa_Bay",
+     "name": "Tampa Bay",
      "description": "Lightning",
      "size": 1
     },
@@ -53,7 +53,7 @@
    "description": "Division",
    "children": [
     {
-     "name": "New_York_Islanders",
+     "name": "NY Islanders",
      "description": "Islanders",
      "size": 1
     },
@@ -68,7 +68,7 @@
      "size": 1
     },
     {
-     "name": "New_York_Rangers",
+     "name": "NY Rangers",
      "description": "Rangers",
      "size": 1
     },
@@ -83,7 +83,7 @@
      "size": 1
     },
     {
-     "name": "New_Jersey",
+     "name": "New Jersey",
      "description": "Devils",
      "size": 1
     },
@@ -104,7 +104,7 @@
      "size": 1
     },
     {
-     "name": "St._Louis",
+     "name": "St Louis",
      "description": "Blues",
      "size": 1
     },
@@ -150,7 +150,7 @@
      "size": 1
     },
     {
-     "name": "San_Jose",
+     "name": "San Jose",
      "description": "Sharks",
      "size": 1
     },
@@ -160,7 +160,7 @@
      "size": 1
     },
     {
-     "name": "Los_Angeles",
+     "name": "Los Angeles",
      "description": "Kings",
      "size": 1
     },

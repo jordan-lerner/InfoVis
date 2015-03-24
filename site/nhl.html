@@ -206,7 +206,7 @@ d3.json("data/nhl.json", function(error, root) {
     if (!p.parent) return;
 	passingName = p.key;
 	var Userlocation = document.getElementById("Userlocation");
-	Userlocation.innerHTML = "NHL teams";
+	Userlocation.innerHTML = "NHL Teams";
     zoom(p.parent, p);
   }
 
@@ -363,7 +363,7 @@ var tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 // load data
-d3.csv("data/"+TeamStats+".csv", function(error, data) {
+d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
