@@ -53,7 +53,7 @@ width:49%;
 }
 </style>
 <body>
-<h1 id="Userlocation">NHL teams</h1>
+<h1 id="Userlocation">NHL Teams</h1>
 <div id="area1"></div>
 <div id="area2"></div>
 
@@ -150,7 +150,7 @@ d3.json("data/nhl.json", function(error, root) {
         d._children = d.children;
         d.sum = d.value;
         d.key = key(d);
-        d.fill = fill(d);
+        d.fill = d.fill;
       });
 
   // Now redefine the value function to use the previously-computed sum.
