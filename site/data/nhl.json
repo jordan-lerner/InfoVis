@@ -7,172 +7,44 @@
    "description": "Division",
    "children": [
     {
-     "name": "Tampa Bay",
+     "name": "Tampa_Bay",
      "description": "Lightning",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Montreal",
      "description": "Canadians",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Detroit",
      "description": "Red Wings",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Boston",
      "description": "Bruins",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Florida",
      "description": "Panthers",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Toronto",
      "description": "Maple Leafs",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Ottawa",
      "description": "Senators",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Buffalo",
      "description": "Sabres",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     }
    ]
   },
@@ -181,172 +53,44 @@
    "description": "Division",
    "children": [
     {
-     "name": "New York Islanders",
+     "name": "New_York_Islanders",
      "description": "Islanders",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Pittsburgh",
      "description": "Penguins",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Washington",
      "description": "Capitals",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
     },
     {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
-    },
-    {
-     "name": "New York Rangers",
+     "name": "New_York_Rangers",
      "description": "Rangers",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Philadelphia",
      "description": "Flyers",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Columbus",
      "description": "Blue Jackets",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
     },
     {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
-    },
-    {
-     "name": "New Jersey",
+     "name": "New_Jersey",
      "description": "Devils",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Carolina",
      "description": "Hurricanes",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     }
    ]
   },
@@ -357,149 +101,37 @@
     {
      "name": "Nashville",
      "description": "Predators",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
     },
     {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
-    },
-    {
-     "name": "St. Louis",
+     "name": "St._Louis",
      "description": "Blues",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Chicago",
      "description": "Blackhawks",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Winnipeg",
      "description": "Jets",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Dallas",
      "description": "Stars",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Colorado",
      "description": "Avalanche",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Minnesota",
      "description": "Wild",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     }
    ]
   },
@@ -510,161 +142,37 @@
     {
      "name": "Anaheim",
      "description": "Ducks",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Vancouver",
      "description": "Canucks",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Burrows",
-     "description": "Burrows",
-     "size": 1
-    },
-	{
-     "name": "DSedin",
-     "description": "DSedin",
-     "size": 1
-    }
-	 ]
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
      "size": 1
     },
     {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
-    },
-    {
-     "name": "San Jose",
+     "name": "San_Jose",
      "description": "Sharks",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Calgary",
      "description": "Flames",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
     },
     {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
-    },
-    {
-     "name": "Los Angeles",
+     "name": "Los_Angeles",
      "description": "Kings",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Arizona",
      "description": "Coyotes",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     },
     {
      "name": "Edmonton",
      "description": "Oilers",
-     "size": 1,
-	 "children": [
-	     {
-     "name": "Offense",
-     "description": "Offense",
      "size": 1
-    },
-    {
-     "name": "Defense",
-     "description": "Defense",
-     "size": 1
-    },
-    {
-     "name": "Goalies",
-     "description": "Goalies",
-     "size": 1
-    }]
     }
    ]
   }

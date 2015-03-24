@@ -23,20 +23,6 @@ html {
   
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.bar {
-  fill: steelblue;
-}
-
-.x.axis path {
-  display: none;
-}
 #area1{
 float:left;
 width:49%;
@@ -48,6 +34,23 @@ float:right;
 width:49%;
 }
 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
 </style>
 <body>
 <div id="area1"></div>
@@ -189,7 +192,7 @@ d3.json("data/nhl.json", function(error, root) {
     if (p.depth > 1) p = p.parent;
     if (!p.children){
 	passingName = p.key;
-	bargraph(passingName);
+	scatterplotGraph(passingName);
 	return;
 	}
     zoom(p, p);
@@ -312,109 +315,132 @@ d3.select(self.frameElement).style("height", margin.top + margi.bottom + "px");
 <!-- **********************-->
 
 var playerChart;
+function scatterplotGraph(passingName){
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-function bargraph(passingName){
-	var player = passingName.split(".").slice(-1)
+var TeamStats = passingName.split(".").slice(-1);
+alert(TeamStats);
+/* 
+ * value accessor - returns the value to encode for a given data object.
+ * scale - maps value to a visual display encoding, such as a pixel position.
+ * map function - maps from data value to display value
+ * axis - sets up axis
+ */ 
 
-	if(player=="DSedin"){
-		var csvFile ="data/DSedin.csv";
-	}else if(player=="Burrows"){
-		var csvFile ="data/Burrows.csv";
-	}
-	else{
-		var csvFile ="";
-	}
-	var margin = {top: 20, right: 20, bottom: 30, left: 40},
-		width = 960 - margin.left - margin.right,
-		height = 500 - margin.top - margin.bottom;
+// setup x 
+var xValue = function(d) { return d.SAT;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
-	var x0 = d3.scale.ordinal()
-		.rangeRoundBands([0, width], .1);
+// setup y
+var yValue = function(d) { return d["GP"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
 
-	var x1 = d3.scale.ordinal();
+// setup fill color
+var cValue = function(d) { return d.Pos;},
+    color = d3.scale.category10();
 
-	var y = d3.scale.linear()
-		.range([height, 0]);
+// add the graph canvas to the body of the webpage
+playerChart = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	var color = d3.scale.ordinal()
-		.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+// add the tooltip area to the webpage
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
-	var xAxis = d3.svg.axis()
-		.scale(x0)
-		.orient("bottom");
+// load data
+d3.csv("data/"+TeamStats+".csv", function(error, data) {
 
-	var yAxis = d3.svg.axis()
-		.scale(y)
-		.orient("left")
-		.tickFormat(d3.format(".2s"));
+  // change string (from CSV) into number format
+  data.forEach(function(d) {
+    d.SAT = +d.SAT;
+    d["GP"] = +d["GP"];
+//    console.log(d);
+  });
 
-	playerChart = d3.select("#area2").append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-	  .append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  // don't want dots overlapping axis, so add in buffer to data domain
+  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
 
-	d3.csv(csvFile, function(error, data) {
-	  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+  // x-axis
+  playerChart.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("SAT");
 
-	  data.forEach(function(d) {
-		d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
-	  });
+  // y-axis
+  playerChart.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("GP");
 
-	  x0.domain(data.map(function(d) { return d.State; }));
-	  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
-	  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+  // draw dots
+  playerChart.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 8)
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+      .style("fill", function(d) { return color(cValue(d));}) 
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", 1);
+          tooltip.html(d["Player"] + "<br/> (" + xValue(d) 
+	        + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
 
-	  playerChart.append("g")
-		  .attr("class", "x axis")
-		  .attr("transform", "translate(0," + height + ")")
-		  .call(xAxis);
+  // draw legend
+  var legend = playerChart.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-	  playerChart.append("g")
-		  .attr("class", "y axis")
-		  .call(yAxis)
-		.append("text")
-		  .attr("transform", "rotate(-90)")
-		  .attr("y", 10)
-		  .attr("dy", "1em")
-		  .style("text-anchor", "end")
-		  .text("Player Value");
+  // draw legend colored rectangles
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
 
-	  var state = playerChart.selectAll(".state")
-		  .data(data)
-		.enter().append("g")
-		  .attr("class", "g")
-		  .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
-
-	  state.selectAll("rect")
-		  .data(function(d) { return d.ages; })
-		.enter().append("rect")
-		  .attr("width", x1.rangeBand())
-		  .attr("x", function(d) { return x1(d.name); })
-		  .attr("y", function(d) { return y(d.value); })
-		  .attr("height", function(d) { return height - y(d.value); })
-		  .style("fill", function(d) { return color(d.name); });
-
-	  var legend = playerChart.selectAll(".legend")
-		  .data(ageNames.slice().reverse())
-		.enter().append("g")
-		  .attr("class", "legend")
-		  .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-	  legend.append("rect")
-		  .attr("x", width - 18)
-		  .attr("width", 18)
-		  .attr("height", 18)
-		  .style("fill", color);
-
-	  legend.append("text")
-		  .attr("x", width - 24)
-		  .attr("y", 9)
-		  .attr("dy", ".35em")
-		  .style("text-anchor", "end")
-		  .text(function(d) { return d; });
-
-	});
+  // draw legend text
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d;})
+});
 }
 
 </script>
