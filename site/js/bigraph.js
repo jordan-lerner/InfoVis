@@ -127,13 +127,13 @@ d3.json("data/nhl.json", function(error, root) {
     .text(function(d,i) {return d.name})
 
   function zoomIn(p) {
-  	passingName = p.key.split(".");
-    passingName = passingName[passingName.length - 1];
+  	passingName = p.key.split(".").slice(-1);
 	var Userlocation = document.getElementById("Userlocation");
 	Userlocation.innerHTML = passingName;
     if (p.depth > 1) p = p.parent;
     if (!p.children){
-	scatterplotGraph(passingName);
+	scatterPlot = scatterplotGraph(passingName);
+  scatterPlot.remove();
 	return;
 	}
     zoom(p, p);
