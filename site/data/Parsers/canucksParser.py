@@ -6,6 +6,41 @@ file.close()
 
 firstLine = True
 
+mappings = {
+				'ANA': 'Anaheim',
+				'ATL': 'Atlanta',
+				'BOS': 'Boston',
+				'BUF': 'Buffalo',
+				'CAR': 'Carolina',
+				'CBJ': 'Columbus',
+				'CGY': 'Calgary',
+				'CHI': 'Chicago',
+				'COL': 'Colorado',
+				'DAL': 'Dallas',
+				'DET': 'Detroit',
+				'EDM': 'Edmonton',
+				'FLA': 'Florida',
+				'LA' : 'Los Angeles',
+				'MIN': 'Minnesota',
+				'MTL': 'Montreal',
+				'NAS': 'Nashville',
+				'NJ' : 'New Jersey',
+				'NYI': 'New York Islanders',
+				'NYR': 'New York Rangers',
+				'OTT': 'Ottawa',
+				'PHI': 'Philadelphia',
+				'PHX': 'Phoenix',
+				'PIT': 'Pittsburgh',
+				'SJ' : 'San Jose',
+				'STL': 'St. Louis',
+				'TB' : 'Tampa Bay',
+				'TOR': 'Toronto',
+				'VAN': 'Vancouver',
+				'WPG': 'Winnipeg',
+				'WSH':'Washington'
+			}
+
+
 for line in lines:
 	if firstLine:
 		firstLine = False
