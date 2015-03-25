@@ -1,0 +1,52 @@
+For Vis Implementation 
+
+>>>>>> use points below to add features to the VIS for the DEMO
+
+For Paper and presentation
+
+1. What data types are is the system using ? chapter 1
+table
+static
+categorical
+
+2.What actions is the vis going ? chapter 2
+consume - discover,present( i think present ) , enjoy ?
+produce - annotate,record, derive ? ( i think none )?
+search - (none right now) ?
+query -  identify, compare, summarize?
+
+3.what are the vis' targets ? chapter 2
+all data - trends ( i think trends ) , outliers, features ?
+attributes -distribution, dependency ,correlation, similarity ?
+
+4.what display techniques does the vis use ? (page 58)
+superimpose
+aggregate ? group teams together ??
+arrange data using ordering ? 
+
+5.The KEY STUFF part 1( chapter 5 ) 
+** Magnitude channels used 
+we used positioning ( ranked #1 ) 
+
+** Identity channels 
+we used region[ once y axis becomes salary bottom right is best , top left is worst ] ( ranked #1 )
+we used  colour ( ranked #2 )
+
+we only use 4 bins ( 4 coloured divisions, 4 player positions ), only deal with one at a time 
+	you have to finish with the 4 division before the players show up 
+	
+we use both positioning and hue to determine features about the data ( position + hue is considered , fully separable )
+
+6. The KEY STUFF part 2 (chapter 6 )
+
+no 3d because it is not justified 
+
+title of where the user is in the navigation "reduces cognitive load" on the user (page 132)
+
+no subtle changes in our vis, so there is no "change blindness" (page 133)
+
+we built our navigation system based on Shneiderman's mantra overview->zoom and filter->details 
+	Our vis uses this :overview( NHL) ,zoom and filter ( division ), details on demand ( scatterplot ) ( page 135 )
+	
+responsiveness principle, our vis takes < 1 second which is seen as immediate response (page 137)
+

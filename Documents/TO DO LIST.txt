@@ -1,14 +1,9 @@
 Coding part
 
-- fix colouring between different layers of the bi-level graph( colours dont change as you go down ) 
-	* all Pacific teams are pink even after you click them and go down a level in the tree, should get 
-		unique colours at this point 
 - make a default player stat graph that is static ( maybe nhl average values ) on the interface while 
 	users are searching for a player ( so the player graph doesnt just appear out of no where ) 
 - allow updating of player stat's graph ( remove old query and replace with new one ) 
 - remake the whole interface layout and design to be more appealing ( CSS ) 
-- get real data for the vis
-- added all the canucks players to the graph , and make their own [playerName].csv file ){{ 10 min task }}
 - make a filtering system or some other type of interface for the system 
 
 Report
