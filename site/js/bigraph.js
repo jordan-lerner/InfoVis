@@ -133,7 +133,6 @@ d3.json("data/nhl.json", function(error, root) {
     if (p.depth > 1) p = p.parent;
     if (!p.children){
 	scatterPlot = scatterplotGraph(passingName);
-  scatterPlot.remove();
 	return;
 	}
     zoom(p, p);

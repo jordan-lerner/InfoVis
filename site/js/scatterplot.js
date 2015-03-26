@@ -32,15 +32,17 @@ var yValue = function(d) { return d["GP"];}, // data -> value
 var cValue = function(d) { return d.Pos;},
     color = d3.scale.category10();
 
-// add the graph canvas to the body of the webpage
-playerChart = d3.select("body").append("svg")
+d3.select("#area2").select("svg").remove();	
+	
+// add the graph canvas to the #area2 of the webpage
+playerChart = d3.select("#area2").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // add the tooltip area to the webpage
-var tooltip = d3.select("body").append("div")
+var tooltip = d3.select("#area2").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
