@@ -8,7 +8,7 @@ var playerChart;
 function scatterplotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = (400 - margin.left - margin.right),
-    height = (350 - margin.top - margin.bottom);
+    height = (550 - margin.top - margin.bottom);
 
 var TeamStats = passingName;
 /* 

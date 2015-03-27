@@ -9,7 +9,7 @@ var tradeChart;
 function tradePlotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = (400 - margin.left - margin.right),
-    height = (350 - margin.top - margin.bottom);
+    height = (550 - margin.top - margin.bottom);
 
 var TeamStats = passingName;
 /* 
@@ -20,13 +20,13 @@ var TeamStats = passingName;
  */ 
 
 // setup x 
-var xValue = function(d) { return d.SAT;}, // data -> value
+var xValue = function(d) { return d["GP"];}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d["GP"];}, // data -> value
+var yValue = function(d) { return d["SAT"];}, // data -> value
     yScale = d3.scale.linear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
