@@ -79,7 +79,7 @@ width:30%;
 <form>
  <select id ="selector" onchange="mode(this.value)">
   <option value="none" selected="selected">Presentation Mode</option>
-  <option value="GM">GM Mode</option>
+  <option value="compare">compare Mode</option>
 </select> 
 </form>
 
@@ -88,40 +88,19 @@ width:30%;
   <option value="Vancouver" selected="selected">Canucks</option>
   <option value="Anaheim">Anaheim</option>
   <option value="Arizona">Arizona</option>
-  <option value="Boston">Boston</option>
-  <option value="Buffalo">Buffalo</option>
-  <option value="Calgary">Calgary</option>
-  <option value="Carolina">Carolina</option>
-  <option value="Chicago">Chicago</option>
-  <option value="Colorado">Colorado</option>
-  <option value="Columbus">Columbus</option>
-  <option value="Dallas">Dallas</option>
-  <option value="Detroit">Detroit</option>
-  <option value="Edmonton">Edmonton</option>
-  <option value="Florida">Florida</option>
-  <option value="Los Angeles">Los Angeles</option>
-  <option value="Minnesota">Minnesota</option>
-  <option value="Montreal">Montreal</option>
-  <option value="Nashville">Nashville</option>
-  <option value="New Jersey">New Jersey</option>
-  <option value="NY Islanders">NY Islanders</option>
-  <option value="NY Rangers">NY Rangers</option>
-  <option value="Ottawa">Ottawa</option>
-  <option value="Philadelphia">Philadelphia</option>
-  <option value="Pittsburgh">Pittsburgh</option>
-  <option value="San Jose">San Jose</option>
-  <option value="St Louis">St Louis</option>
-  <option value="Tampa Bay">Tampa Bay</option>
-  <option value="Toronto">Toronto</option>
-  <option value="Washington">Washington</option>
-  <option value="Winnipeg">Winnipeg</option>
-
 </select> 
 </form>
 </div>
-<div id="area1"></div>
-<div id="area2"></div>
-<div id="area3"></div>
+<table>
+	<tr>
+		 <td><div id="area1"></div></td>
+		 <td><div id="area2"></div></td>
+	</tr>
+	<tr>
+		 <td><div id="area3"></div></td>
+		 <td><div id="area4"></div></td>
+	</tr>
+</table>
 
 </body>
 <script src="js/d3.v3.min.js"></script>

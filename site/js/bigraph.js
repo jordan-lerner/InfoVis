@@ -2,8 +2,6 @@ var margin = {top: 290, right: 260, bottom: 290, left: 260},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
 var passingName;
-var VisSelector;
-var GMSelector;
 	
 function filter_min_arc_size_text(d, i) {return (d.dx*d.depth*radius/3)>14}; 
 
@@ -134,15 +132,7 @@ d3.json("data/nhl.json", function(error, root) {
 	Userlocation.innerHTML = passingName;
     if (p.depth > 1) p = p.parent;
     if (!p.children){
-	VisSelector = document.getElementById("selector").value;
-	if(VisSelector=="none"){
-	d3.select("#area3").select("svg").remove();	
 	scatterPlot = scatterplotGraph(passingName);
-	}else if(VisSelector=="GM"){
-	GMSelector = document.getElementById("GMTeam").value;
-	scatterPlot = scatterplotGraph(GMSelector);
-	tradePlot = tradePlotGraph(passingName);
-	}
 	return;
 	}
     zoom(p, p);
