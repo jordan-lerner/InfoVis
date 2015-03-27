@@ -7,8 +7,8 @@
 var playerChart;
 function scatterplotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = (400 - margin.left - margin.right),
+    height = (350 - margin.top - margin.bottom);
 
 var TeamStats = passingName;
 /* 
@@ -19,13 +19,13 @@ var TeamStats = passingName;
  */ 
 
 // setup x 
-var xValue = function(d) { return d.SAT;}, // data -> value
+var xValue = function(d) { return d.GP;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d["GP"];}, // data -> value
+var yValue = function(d) { return d["SAT"];}, // data -> value
     yScale = d3.scale.linear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
@@ -60,7 +60,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // don't want dots overlapping axis, so add in buffer to data domain
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+  yScale.domain([-460, 360]);
 
   // x-axis
   playerChart.append("g")
@@ -72,7 +72,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("SAT");
+      .text("Salary");
 
   // y-axis
   playerChart.append("g")
@@ -84,7 +84,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("GP");
+      .text("Value");
 
   // draw dots
   playerChart.selectAll(".dot")
@@ -99,8 +99,8 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip.html(d["Player"] + "<br/> (Games played: " + yValue(d) 
-	        + ", SAT: " + xValue(d) + ")")
+          tooltip.html(d["Player"] + "<br/> (SAT: " + yValue(d) 
+	        + ", GP: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })

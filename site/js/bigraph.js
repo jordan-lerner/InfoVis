@@ -1,4 +1,4 @@
-var margin = {top: 350, right: 480, bottom: 350, left: 480},
+var margin = {top: 290, right: 260, bottom: 290, left: 260},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
 var passingName;
@@ -225,7 +225,7 @@ d3.json("data/nhl.json", function(error, root) {
     texts.style("opacity", 0)
       .attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; })
     .attr("x", function(d) { return radius / 3 * d.depth; })  
-    .attr("dx", "6") // margin
+    .attr("dx", "2") // margin
       .attr("dy", ".35em") // vertical-align
       .filter(filter_min_arc_size_text)     
       .text(function(d,i) {return d.name})

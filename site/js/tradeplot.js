@@ -8,8 +8,8 @@
 var tradeChart;
 function tradePlotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = (400 - margin.left - margin.right),
+    height = (350 - margin.top - margin.bottom);
 
 var TeamStats = passingName;
 /* 
@@ -61,7 +61,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // don't want dots overlapping axis, so add in buffer to data domain
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+  yScale.domain([-460, 350]);
 
   // x-axis
   tradeChart.append("g")
@@ -73,7 +73,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("SAT");
+      .text("Salary");
 
   // y-axis
   tradeChart.append("g")
@@ -85,7 +85,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("GP");
+      .text("Value");
 
   // draw dots
   tradeChart.selectAll(".dot")
@@ -100,8 +100,8 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip.html(d["Player"] + "<br/> (Games played: " + yValue(d) 
-	        + ", SAT: " + xValue(d) + ")")
+          tooltip.html(d["Player"] + "<br/> (SAT: " + yValue(d) 
+	        + ", GP: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
