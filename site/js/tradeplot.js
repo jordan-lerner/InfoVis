@@ -3,9 +3,10 @@
 <!-- **********************-->
 
 <!-- CHANGE GP TO SALARY variable ( search and replace )-->
+<!-- CHANGE Pos TO tradeplayer variable ( search and replace )-->
 
-var playerChart;
-function scatterplotGraph(passingName){
+var tradeChart;
+function tradePlotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -34,17 +35,17 @@ var yValue = function(d) { return d["GP"];}, // data -> value
 var cValue = function(d) { return d.Pos;},
     color = d3.scale.category10();
 
-d3.select("#area2").select("svg").remove();	
+d3.select("#area3").select("svg").remove();	
 	
-// add the graph canvas to the #area2 of the webpage
-playerChart = d3.select("#area2").append("svg")
+// add the graph canvas to the #area3 of the webpage
+tradeChart = d3.select("#area3").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // add the tooltip area to the webpage
-var tooltip = d3.select("#area2").append("div")
+var tooltip = d3.select("#area3").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
@@ -63,7 +64,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
   yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
 
   // x-axis
-  playerChart.append("g")
+  tradeChart.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
@@ -75,7 +76,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .text("SAT");
 
   // y-axis
-  playerChart.append("g")
+  tradeChart.append("g")
       .attr("class", "y axis")
       .call(yAxis)
     .append("text")
@@ -87,7 +88,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .text("GP");
 
   // draw dots
-  playerChart.selectAll(".dot")
+  tradeChart.selectAll(".dot")
       .data(data)
     .enter().append("circle")
       .attr("class", "dot")
@@ -111,7 +112,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       });
 
   // draw legend
-  var legend = playerChart.selectAll(".legend")
+  var legend = tradeChart.selectAll(".legend")
       .data(color.domain())
     .enter().append("g")
       .attr("class", "legend")

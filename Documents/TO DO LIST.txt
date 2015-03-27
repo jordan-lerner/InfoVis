@@ -2,7 +2,6 @@ Coding part
 
 - make a default player stat graph that is static ( maybe nhl average values ) on the interface while 
 	users are searching for a player ( so the player graph doesnt just appear out of no where ) 
-- allow updating of player stat's graph ( remove old query and replace with new one ) 
 - remake the whole interface layout and design to be more appealing ( CSS ) 
 - make a filtering system or some other type of interface for the system 
 

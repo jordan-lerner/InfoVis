@@ -24,14 +24,14 @@ html {
 }
 
 #area1{
-float:left;
-width:49%;
 display: block;
 }
 #area2{
 display: block;
-float:right;
-width:49%;
+}
+
+#area3{
+display: block;
 }
 
 .axis path,
@@ -51,15 +51,70 @@ width:49%;
   height: 28px;
   pointer-events: none;
 }
+
+#GmMode{
+	 display: none;
+}
 </style>
 <body>
 <h1 id="Userlocation">NHL Teams</h1>
+<!-- area1 = bigraph-->
+<!-- area2 = scatterplot graph-->
+<!-- area3 = tradeplot graph-->
+<!-- SelectorMenu = change between modes-->
+<div id="SelectorMenu">
+<form>
+ <select id ="selector" onchange="mode(this.value)">
+  <option value="none" selected="selected">Presentation Mode</option>
+  <option value="GM">GM Mode</option>
+</select> 
+</form>
+
+<form id ="GmMode">
+ <select id ="GMTeam" onchange="GmUpdate(this.value)">
+  <option value="Vancouver" selected="selected">Canucks</option>
+  <option value="Anaheim">Anaheim</option>
+  <option value="Arizona">Arizona</option>
+  <option value="Boston">Boston</option>
+  <option value="Buffalo">Buffalo</option>
+  <option value="Calgary">Calgary</option>
+  <option value="Carolina">Carolina</option>
+  <option value="Chicago">Chicago</option>
+  <option value="Colorado">Colorado</option>
+  <option value="Columbus">Columbus</option>
+  <option value="Dallas">Dallas</option>
+  <option value="Detroit">Detroit</option>
+  <option value="Edmonton">Edmonton</option>
+  <option value="Florida">Florida</option>
+  <option value="Los Angeles">Los Angeles</option>
+  <option value="Minnesota">Minnesota</option>
+  <option value="Montreal">Montreal</option>
+  <option value="Nashville">Nashville</option>
+  <option value="New Jersey">New Jersey</option>
+  <option value="NY Islanders">NY Islanders</option>
+  <option value="NY Rangers">NY Rangers</option>
+  <option value="Ottawa">Ottawa</option>
+  <option value="Philadelphia">Philadelphia</option>
+  <option value="Pittsburgh">Pittsburgh</option>
+  <option value="San Jose">San Jose</option>
+  <option value="St Louis">St Louis</option>
+  <option value="Tampa Bay">Tampa Bay</option>
+  <option value="Toronto">Toronto</option>
+  <option value="Washington">Washington</option>
+  <option value="Winnipeg">Winnipeg</option>
+
+</select> 
+</form>
+</div>
 <div id="area1"></div>
 <div id="area2"></div>
+<div id="area3"></div>
 
 </body>
 <script src="js/d3.v3.min.js"></script>
 <script src="js/scatterplot.js"></script>
+<script src="js/tradeplot.js"></script>
 <script src="js/bigraph.js"></script>
+<script src="js/gmMode.js"></script>
 <script type="text/javascript">
 </script>
