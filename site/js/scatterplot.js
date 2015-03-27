@@ -99,8 +99,8 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip.html(d["Player"] + "<br/> (Games played: " + xValue(d) 
-	        + ", SAT: " + yValue(d) + ")")
+          tooltip.html(d["Player"] + "<br/> (Games played: " + yValue(d) 
+	        + ", SAT: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
