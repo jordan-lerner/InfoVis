@@ -8,6 +8,7 @@ var filter = 'SAT';
 var tooltip1;
 function filterUpdate(value){
   filter = value;
+  scatterPlot = scatterplotGraph(passingName);
 }
 
 var filter_scale = {
