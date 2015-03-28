@@ -68,7 +68,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // don't want dots overlapping axis, so add in buffer to data domain
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([-460, 400]);
+  yScale.domain([filter_scale[compareFilter]['min'],filter_scale[compareFilter]['max']]);
 
   // x-axis
   compareChart.append("g")

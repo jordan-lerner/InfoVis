@@ -10,6 +10,17 @@ function filterUpdate(value){
   filter = value;
 }
 
+var filter_scale = {
+  "SAT": {
+    "min":-460,
+    "max":400
+  },
+  "G": {
+    "min":0,
+    "max":50
+  }
+};
+
 var playerChart;
 function scatterplotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -67,7 +78,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // don't want dots overlapping axis, so add in buffer to data domain
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([-460, 400]);
+  yScale.domain([filter_scale[filter]['min'],filter_scale[filter]['max']]);
 
   // x-axis
   playerChart.append("g")
