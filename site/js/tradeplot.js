@@ -5,6 +5,11 @@
 <!-- CHANGE GP TO SALARY variable ( search and replace )-->
 <!-- CHANGE Pos TO tradeplayer variable ( search and replace )-->
 
+compareFilter  = "SAT"
+function compareFilterUpdate(value){
+  compareFilter = value;
+}
+
 var compareChart;
 var tooltip2;
 function scatterplotGraph2(passingName2){
@@ -27,7 +32,7 @@ var xValue = function(d) { return d["GP"];}, // data -> value
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d["SAT"];}, // data -> value
+var yValue = function(d) { return d[compareFilter];}, // data -> value
     yScale = d3.scale.linear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
@@ -56,7 +61,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
-    d.SAT = +d.SAT;
+    d[compareFilter] = +d[compareFilter];
     d["GP"] = +d["GP"];
 //    console.log(d);
   });
@@ -102,7 +107,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
           tooltip2.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip2.html(d["Player"] + "<br/> (SAT: " + yValue(d) 
+          tooltip2.html(d["Player"] + "<br/> ("+compareFilter+": " + yValue(d) 
 	        + ", GP: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
