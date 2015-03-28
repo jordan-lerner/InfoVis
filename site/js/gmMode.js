@@ -135,6 +135,7 @@ d3.json("data/nhl.json", function(error, root) {
     if (p.depth > 1) p = p.parent;
     if (!p.children){
 	tradePlot = scatterplotGraph2(passingName2);
+	document.getElementById("legend2").style.display = 'block';
 	return;
 	}
     zoom(p, p);
@@ -256,6 +257,7 @@ d3.select(self.frameElement).style("height", margin.top + margi.bottom + "px");
 }
 else{
 	d3.select("#area3").select("svg").remove();	
-	d3.select("#area4").select("svg").remove();	
+	d3.select("#area4").select("svg").remove();
+	document.getElementById("legend2").style.display = 'none';
 }
 }

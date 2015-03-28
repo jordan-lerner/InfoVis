@@ -8,8 +8,8 @@
 var compareChart;
 function scatterplotGraph2(passingName2){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = (400 - margin.left - margin.right),
-    height = (550 - margin.top - margin.bottom);
+    width = (600 - margin.left - margin.right),
+    height = (500 - margin.top - margin.bottom);
 
 var TeamStats = passingName2;
 /* 
@@ -44,9 +44,9 @@ compareChart = d3.select("#area4").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// add the tooltip area to the webpage
-var tooltip = d3.select("#area4").append("div")
-    .attr("class", "tooltip")
+// add the tooltip2 area to the webpage
+var tooltip2 = d3.select("#area6").append("div")
+    .attr("class", "tooltip2")
     .style("opacity", 0);
 
 // load data
@@ -97,20 +97,21 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("cy", yMap)
       .style("fill", function(d) { return color(cValue(d));}) 
       .on("mouseover", function(d) {
-          tooltip.transition()
+          tooltip2.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip.html(d["Player"] + "<br/> (SAT: " + yValue(d) 
+          tooltip2.html(d["Player"] + "<br/> (SAT: " + yValue(d) 
 	        + ", GP: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
       .on("mouseout", function(d) {
-          tooltip.transition()
+          tooltip2.transition()
                .duration(500)
                .style("opacity", 0);
       });
-
+	  document.getElementById("legend2").style.display = 'block';
+/*
   // draw legend
   var legend = compareChart.selectAll(".legend")
       .data(color.domain())
@@ -132,5 +133,6 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("dy", ".35em")
       .style("text-anchor", "end")
       .text(function(d) { return d;})
+	  */
 });
 }

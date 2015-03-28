@@ -17,7 +17,22 @@ circle {
         padding: 3px 5px;
         border: 1px solid black;
         text-align: center;}
-
+		
+.tooltip1{
+		background-color: white;
+        padding: 3px 5px;
+        border: 5px solid black;
+        text-align: center;
+		width:100%;
+		}
+		
+.tooltip2{
+		background-color: white;
+        padding: 3px 5px;
+        border: 5px solid black;
+        text-align: center;
+		width:100%;
+		}
 html {
   font-family: sans-serif;
   font-size:small;
@@ -37,9 +52,25 @@ left:100px;
 #area2{
 position:relative;
 left:100px;
-display: inline-block;
-width:30%;
+width:60%;
 }
+#area4{
+position:relative;
+left:100px;
+width:60%;
+}
+#area5{
+position:relative;
+left:100px;
+width:200px;
+}
+
+#area6{
+position:relative;
+left:100px;
+width:200px;
+}
+
 
 .legend{
 	position:relative;
@@ -58,11 +89,37 @@ width:30%;
   stroke: #000;
 }
 
-.tooltip {
-  position: absolute;
-  width: 200px;
-  height: 28px;
-  pointer-events: none;
+#legend1{
+	display:none;
+}
+
+#legend1 th{
+    border: 2px solid black;
+}
+#legend1 td{
+    border: 2px solid black;
+}
+#legend2{
+	display:none;
+}
+#legend2 th{
+    border: 2px solid black;
+}
+#legend2 td{
+    border: 2px solid black;
+}
+
+.blue{
+background-color:blue;
+}
+.orange{
+background-color:orange;
+}
+.green{
+background-color:green;
+}
+.red{
+background-color:red;
 }
 
 #GmMode{
@@ -99,10 +156,70 @@ width:30%;
 	<tr>
 		 <td><div id="area1"></div></td>
 		 <td><div id="area2"></div></td>
+		 <td><div id="area5">
+		 <table id="legend1">
+			<th>position</th>
+			<th>colour</th>
+			<tr>
+				<td>Center
+				</td>
+				<td class="blue">
+				</td>
+			</tr>
+			<tr>
+				<td>Left Wing
+				</td>
+				<td class="orange">
+				</td>
+			</tr>
+			<tr>
+				<td>Right Wing
+				</td>
+				<td class="green">
+				</td>
+			</tr>
+			<tr>
+				<td>Defense
+				</td>
+				<td class="red">
+				</td>
+			</tr>
+		 </table>
+		 </div></td>
 	</tr>
 	<tr>
 		 <td><div id="area3"></div></td>
 		 <td><div id="area4"></div></td>
+		 <td><div id="area6">
+<table id="legend2">
+			<th>position</th>
+			<th>colour</th>
+			<tr>
+				<td>Center
+				</td>
+				<td class="blue">
+				</td>
+			</tr>
+			<tr>
+				<td>Left Wing
+				</td>
+				<td class="orange">
+				</td>
+			</tr>
+			<tr>
+				<td>Right Wing
+				</td>
+				<td class="green">
+				</td>
+			</tr>
+			<tr>
+				<td>Defense
+				</td>
+				<td class="red">
+				</td>
+			</tr>
+		 </table>
+		 </div></td>
 	</tr>
 </table>
 
