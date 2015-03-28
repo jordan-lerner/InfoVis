@@ -158,10 +158,6 @@
     <tr>
       <td>
         <h1 id="Userlocation">NHL Teams</h1>
-        <select id="filter" onchange="filterUpdate(this.value)">
-          <option value="SAT" selected="selected">SAT</option>
-          <option value="G">Goals</option>
-        </select>
       </td>
       <td>
         <div id="SelectorMenu">
@@ -179,6 +175,12 @@
         <div id="area1"></div>
       </td>
       <td>
+        <h3>Filter by:
+          <select id="filter" onchange="filterUpdate(this.value)">
+            <option value="SAT" selected="selected">SAT</option>
+            <option value="G">Goals</option>
+          </select>
+        </h3>
         <div id="area2"></div>
       </td>
       <td>
@@ -217,10 +219,6 @@
     <tr id="compareSelector">
       <td>
         <h1 id="Userlocation2">NHL Teams</h1>
-        <select id="compareFilter" onchange="compareFilterUpdate(this.value)">
-          <option value="SAT" selected="selected">SAT</option>
-          <option value="G">Goals</option>
-        </select>
       </td>
     </tr>
     <tr id="compareRow">
@@ -228,6 +226,12 @@
         <div id="area3"></div>
       </td>
       <td>
+        <h3>Filter by:
+          <select id="compareFilter" onchange="compareFilterUpdate(this.value)">
+            <option value="SAT" selected="selected">SAT</option>
+            <option value="G">Goals</option>
+          </select>
+        </h3>
         <div id="area4"></div>
       </td>
       <td>
