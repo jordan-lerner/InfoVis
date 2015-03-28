@@ -4,6 +4,12 @@
 
 <!-- CHANGE GP TO SALARY variable ( search and replace )-->
 
+var filter = 'SAT';
+
+function filterUpdate(value){
+  filter = value;
+}
+
 var playerChart;
 function scatterplotGraph(passingName){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -25,7 +31,7 @@ var xValue = function(d) { return d.GP;}, // data -> value
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d["SAT"];}, // data -> value
+var yValue = function(d) { return d[filter];}, // data -> value
     yScale = d3.scale.linear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
@@ -53,7 +59,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
-    d.SAT = +d.SAT;
+    d[filter] = +d[filter];
     d["GP"] = +d["GP"];
 //    console.log(d);
   });
@@ -99,7 +105,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", 1);
-          tooltip.html(d["Player"] + "<br/> (SAT: " + yValue(d) 
+          tooltip.html(d["Player"] + "<br/> ("+filter+": " + yValue(d) 
 	        + ", GP: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
