@@ -51,20 +51,20 @@ var yValue = function(d) { return d[filter];}, // data -> value
 var cValue = function(d) { return d.Pos;},
     color = d3.scale.category10();
 
-d3.select("#area2").select("svg").remove();	
-	
+d3.select("#area2").select("svg").remove(); 
+  
 // add the graph canvas to the #area2 of the webpage
 playerChart = d3.select("#area2").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	d3.select("#area5").select(".tooltip1").remove();
+  d3.select("#area5").select(".tooltip1").remove();
 // add the tooltip1 area to the webpage
 tooltip1 = d3.select("#area5").append("div")
     .attr("class", "tooltip1")
     .style("opacity", 0);
-	
+  
 
 // load data
 d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
@@ -118,7 +118,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
                .duration(200)
                .style("opacity", 1);
           tooltip1.html(d["Player"] + "<br/> ("+filter+": " + yValue(d) 
-	        + ", GP: " + xValue(d) + ")")
+          + ", GP: " + xValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
@@ -127,7 +127,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
                .duration(500)
                .style("opacity", 0);
       });
-	  document.getElementById("legend1").style.display = 'block';
+    document.getElementById("legend1").style.display = 'block';
 /*
   // draw legend
   var legend = playerChart.selectAll(".legend")
@@ -150,6 +150,6 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("dy", ".35em")
       .style("text-anchor", "end")
       .text(function(d) { return d;})
-	  */
+    */
 });
 }
