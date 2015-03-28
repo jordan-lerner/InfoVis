@@ -138,7 +138,10 @@ d3.json("data/nhl.json", function(error, root) {
 	tradePlot = scatterplotGraph2(passingName2);
 	document.getElementById("legend2").style.display = 'block';
 	return;
-	}
+	} if (teams.indexOf(""+passingName) >= 0) {
+      tradePlot = scatterplotGraph2(passingName2);
+      document.getElementById("legend2").style.display = 'block';
+    }
     zoom(p, p);
   }
 

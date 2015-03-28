@@ -2,6 +2,38 @@ var margin = {top: 185, right: 260, bottom: 185, left: 260},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
 var passingName;
+
+var teams = ["Anaheim",
+        "Atlanta",
+        "Boston",
+        "Buffalo",
+        "Carolina",
+        "Columbus",
+        "Calgary",
+        "Chicago",
+        "Colorado",
+        "Dallas",
+        "Detroit",
+        "Edmonton",
+        "Florida",
+        "Los Angeles",
+        "Minnesota",
+        "Montreal",
+        "Nashville",
+        "New Jersey",
+        "NY Islanders",
+        "NY Rangers",
+        "Ottawa",
+        "Philadelphia",
+        "Phoenix",
+        "Pittsburgh",
+        "San Jose",
+        "St Louis",
+        "Tampa Bay",
+        "Toronto",
+        "Vancouver",
+        "Winnipeg",
+        "Washington"];
 	
 function filter_min_arc_size_text(d, i) {return (d.dx*d.depth*radius/3)>14}; 
 
@@ -132,9 +164,11 @@ d3.json("data/nhl.json", function(error, root) {
 	Userlocation.innerHTML = passingName;
     if (p.depth > 1) p = p.parent;
     if (!p.children){
-	scatterPlot = scatterplotGraph(passingName);
-	return;
-	}
+    	scatterPlot = scatterplotGraph(passingName);
+    	return;
+    } if (teams.indexOf(""+passingName) >= 0) {
+      scatterPlot = scatterplotGraph(passingName);
+    }
     zoom(p, p);
   }
 
