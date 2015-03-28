@@ -18,6 +18,11 @@ circle {
         border: 1px solid black;
         text-align: center;}
 		
+#tooltip4 { background-color: white;
+        padding: 3px 5px;
+        border: 1px solid black;
+        text-align: center;}
+		
 .tooltip1{
 		background-color: white;
         padding: 3px 5px;
@@ -35,7 +40,8 @@ circle {
 		}
 html {
   font-family: sans-serif;
-  font-size:small;
+  font-size:x-small;
+  font-weight: bold;
   
 }
 
@@ -125,34 +131,38 @@ background-color:red;
 #GmMode{
 	 display: none;
 }
+
+#compareSelector{
+display:none;
+}
+
 </style>
 <body>
-<h1 id="Userlocation">NHL Teams</h1>
+
 <!-- area1 = bigraph-->
 <!-- area2 = scatterplot graph-->
 <!-- area3 = tradeplot graph-->
 <!-- SelectorMenu = change between modes-->
-<div id="SelectorMenu">
-<form>
- <select id ="selector" onchange="mode(this.value)">
-  <option value="none" selected="selected">Presentation Mode</option>
-  <option value="compare">compare Mode</option>
-</select> 
-</form>
 
-<form id ="GmMode">
- <select id ="GMTeam" onchange="GmUpdate(this.value)">
-  <option value="Vancouver" selected="selected">Canucks</option>
-  <option value="Anaheim">Anaheim</option>
-  <option value="Arizona">Arizona</option>
-</select> 
-</form>
-<select id ="filter" onchange="filterUpdate(this.value)">
-  <option value="SAT" selected="selected">SAT</option>
-  <option value="G">Goals</option>
-</select> 
-</div>
-<table>
+<table class="visLayoutGrid">
+	<tr>
+	<td><h1 id="Userlocation">NHL Teams</h1>
+		<select id ="filter" onchange="filterUpdate(this.value)">
+		  <option value="SAT" selected="selected">SAT</option>
+		  <option value="G">Goals</option>
+		</select> 
+	</td>
+	<td>
+		<div id="SelectorMenu">
+		<form>
+		 <select id ="selector" onchange="mode(this.value)">
+		  <option value="none" selected="selected">Presentation Mode</option>
+		  <option value="compare">compare Mode</option>
+		</select> 
+		</form>
+		</div>
+	</td>
+	</tr>
 	<tr>
 		 <td><div id="area1"></div></td>
 		 <td><div id="area2"></div></td>
@@ -187,11 +197,19 @@ background-color:red;
 		 </table>
 		 </div></td>
 	</tr>
-	<tr>
+	<tr id="compareSelector">
+	<td><h1 id="Userlocation2">NHL Teams</h1>
+		<select id ="filter" onchange="filterUpdate(this.value)">
+		  <option value="SAT" selected="selected">SAT</option>
+		  <option value="G">Goals</option>
+		</select> 
+	</td>
+	</tr>
+	<tr id="compareRow">
 		 <td><div id="area3"></div></td>
 		 <td><div id="area4"></div></td>
 		 <td><div id="area6">
-<table id="legend2">
+			<table id="legend2">
 			<th>position</th>
 			<th>colour</th>
 			<tr>

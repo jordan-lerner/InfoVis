@@ -1,4 +1,4 @@
-var margin = {top: 290, right: 260, bottom: 290, left: 260},
+var margin = {top: 185, right: 260, bottom: 185, left: 260},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
 var passingName;

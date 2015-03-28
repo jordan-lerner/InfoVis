@@ -1,6 +1,7 @@
 function mode(value){
 if(value=="compare"){
-var margin = {top: 290, right: 260, bottom: 290, left: 260},
+document.getElementById("compareSelector").style.display = 'block';
+var margin = {top: 185, right: 260, bottom: 185, left: 260},
     radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
 var passingName2;
@@ -30,10 +31,10 @@ var arc = d3.svg.arc()
     .innerRadius(function(d) { return radius / 3 * d.depth; })
     .outerRadius(function(d) { return radius / 3 * (d.depth + 1) - 1; });
 
-//Tooltip description
-var tooltip = d3.select("body")
+//tooltip4 description
+var tooltip4 = d3.select("body")
     .append("div")
-    .attr("id", "tooltip")
+    .attr("id", "tooltip4")
     .style("position", "absolute")
     .style("z-index", "10")
     .style("opacity", 0);
@@ -58,19 +59,19 @@ function computeTextRotation(d) {
 function mouseOverArc(d) {
        d3.select(this).attr("stroke","black")
        
-          tooltip.html(format_description(d));
-          return tooltip.transition()
+          tooltip4.html(format_description(d));
+          return tooltip4.transition()
             .duration(50)
             .style("opacity", 0.9);
         }
 
 function mouseOutArc(){
   d3.select(this).attr("stroke","")
-  return tooltip.style("opacity", 0);
+  return tooltip4.style("opacity", 0);
 }
 
 function mouseMoveArc (d) {
-          return tooltip
+          return tooltip4
             .style("top", (d3.event.pageY-10)+"px")
             .style("left", (d3.event.pageX+10)+"px");
 }
@@ -259,5 +260,7 @@ else{
 	d3.select("#area3").select("svg").remove();	
 	d3.select("#area4").select("svg").remove();
 	document.getElementById("legend2").style.display = 'none';
+	document.getElementById("compareSelector").style.display = 'none';
+	document.getElementById("tooltip4").style.display = 'none';
 }
 }
