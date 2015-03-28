@@ -9,6 +9,8 @@ compareFilter = "SAT"
 
 function compareFilterUpdate(value) {
   compareFilter = value;
+  tradePlot = scatterplotGraph2(passingName2);
+  document.getElementById("legend2").style.display = 'block';
 }
 
 var compareChart;

@@ -1,3 +1,4 @@
+var passingName2;
 function mode(value) {
   if (value == "compare") {
     document.getElementById("compareSelector").style.display = 'block';
@@ -8,8 +9,6 @@ function mode(value) {
         left: 260
       },
       radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
-
-    var passingName2;
 
     function filter_min_arc_size_text(d, i) {
       return (d.dx * d.depth * radius / 3) > 14
