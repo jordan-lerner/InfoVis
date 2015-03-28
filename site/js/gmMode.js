@@ -1,4 +1,5 @@
 var passingName2;
+var Userlocation2;
 function mode(value) {
   if (value == "compare") {
     document.getElementById("compareSelector").style.display = 'block';
@@ -163,8 +164,8 @@ function mode(value) {
 
       function zoomIn(p) {
         passingName2 = p.key.split(".").slice(-1);
-        var Userlocation = document.getElementById("Userlocation");
-        Userlocation.innerHTML = passingName2;
+        Userlocation2 = document.getElementById("Userlocation2");
+        Userlocation2.innerHTML = passingName2;
         if (p.depth > 1) p = p.parent;
         if (!p.children) {
           tradePlot = scatterplotGraph2(passingName2);
@@ -181,8 +182,8 @@ function mode(value) {
       function zoomOut(p) {
         if (!p.parent) return;
         passingName2 = p.key;
-        var Userlocation = document.getElementById("Userlocation");
-        Userlocation.innerHTML = "NHL Teams";
+        Userlocation2 = document.getElementById("Userlocation2");
+        Userlocation2.innerHTML = "NHL Teams";
         zoom(p.parent, p);
       }
 
@@ -337,5 +338,6 @@ function mode(value) {
     document.getElementById("legend2").style.display = 'none';
     document.getElementById("compareSelector").style.display = 'none';
     document.getElementById("tooltip4").style.display = 'none';
+	Userlocation2.innerHTML = "NHL Teams";
   }
 }
