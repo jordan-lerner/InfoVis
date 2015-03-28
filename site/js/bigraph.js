@@ -195,14 +195,24 @@ d3.json("data/nhl.json", function(error, root) {
   function zoomIn(p) {
     passingName = p.key.split(".").slice(-1);
     var Userlocation = document.getElementById("Userlocation");
-    Userlocation.innerHTML = passingName;
-    if (p.depth > 1) p = p.parent;
+    if (p.key.split(".").length > 0) {
+      Userlocation.innerHTML = p.key.split(".").slice(0,1);
+    }
+    if (p.depth > 1) {
+      p = p.parent;
+    }
     if (!p.children) {
       scatterPlot = scatterplotGraph(passingName);
+      document.getElementById("filter").style.display = "block";
+      document.getElementById("scatterPlotTitle").style.display = "block";
+      scatterPlotTitle.innerHTML = passingName;
       return;
     }
     if (teams.indexOf("" + passingName) >= 0) {
       scatterPlot = scatterplotGraph(passingName);
+      document.getElementById("filter").style.display = "block";
+      document.getElementById("scatterPlotTitle").style.display = "block";
+      scatterPlotTitle.innerHTML = passingName;
     }
     zoom(p, p);
   }

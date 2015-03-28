@@ -2,6 +2,8 @@ var passingName2;
 function mode(value) {
   if (value == "compare") {
     document.getElementById("compareSelector").style.display = 'block';
+    document.getElementById("Userlocation2").style.display = "block";
+
     var margin = {
         top: 185,
         right: 260,
@@ -164,16 +166,24 @@ function mode(value) {
       function zoomIn(p) {
         passingName2 = p.key.split(".").slice(-1);
         var Userlocation2 = document.getElementById("Userlocation2");
-        Userlocation2.innerHTML = passingName2;
+        if (p.key.split(".").length > 0) {
+          Userlocation2.innerHTML = p.key.split(".").slice(0,1);
+        }
         if (p.depth > 1) p = p.parent;
         if (!p.children) {
           tradePlot = scatterplotGraph2(passingName2);
           document.getElementById("legend2").style.display = 'block';
+          document.getElementById("compareFilter").style.display = "block";
+          document.getElementById("tradePlotTitle").style.display = "block";
+          tradePlotTitle.innerHTML = passingName2;
           return;
         }
         if (teams.indexOf("" + passingName2) >= 0) {
           tradePlot = scatterplotGraph2(passingName2);
           document.getElementById("legend2").style.display = 'block';
+          document.getElementById("compareFilter").style.display = "block";
+          document.getElementById("tradePlotTitle").style.display = "block";
+          tradePlotTitle.innerHTML = passingName2;
         }
         zoom(p, p);
       }
@@ -337,6 +347,9 @@ function mode(value) {
     document.getElementById("legend2").style.display = 'none';
     document.getElementById("compareSelector").style.display = 'none';
     document.getElementById("tooltip4").style.display = 'none';
+    document.getElementById("compareFilter").style.display = "none";
+    document.getElementById("Userlocation2").style.display = "none";
+    document.getElementById("tradePlotTitle").style.display = "none";
 	Userlocation2.innerHTML = "NHL Teams";
   }
 }
