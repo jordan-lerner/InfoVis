@@ -103,7 +103,7 @@ d3.json("data/nhl.json", function(error, root) {
       .on("click", zoomOut);
 
   center.append("title")
-      .text("zoom out");
+      .text("Zoom Out");
       
   var partitioned_data=partition.nodes(root).slice(1)
 
