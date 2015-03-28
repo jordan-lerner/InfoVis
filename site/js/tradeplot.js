@@ -111,7 +111,7 @@ function scatterplotGraph2(passingName2) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text(compareFilter);
+      .text(filter_scale[compareFilter]["fullName"]);
 
     // draw dots
     compareChart.selectAll(".dot")

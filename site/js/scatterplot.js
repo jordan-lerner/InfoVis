@@ -14,11 +14,13 @@ function filterUpdate(value){
 var filter_scale = {
   "SAT": {
     "min":-460,
-    "max":400
+    "max":400,
+    "fullName":"SAT"
   },
   "G": {
     "min":0,
-    "max":50
+    "max":60,
+    "fullName":"Goals"
   }
 };
 
@@ -103,7 +105,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text(filter);
+      .text(filter_scale[filter]["fullName"]);
 
   // draw dots
   playerChart.selectAll(".dot")
