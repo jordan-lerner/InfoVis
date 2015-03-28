@@ -6,6 +6,7 @@
 <!-- CHANGE Pos TO tradeplayer variable ( search and replace )-->
 
 var compareChart;
+var tooltip2;
 function scatterplotGraph2(passingName2){
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = (400 - margin.left - margin.right),
@@ -44,6 +45,7 @@ compareChart = d3.select("#area4").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+	d3.select("#area6").select(".tooltip2").remove();
 // add the tooltip2 area to the webpage
 var tooltip2 = d3.select("#area6").append("div")
     .attr("class", "tooltip2")
@@ -61,7 +63,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // don't want dots overlapping axis, so add in buffer to data domain
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([-460, 350]);
+  yScale.domain([-460, 400]);
 
   // x-axis
   compareChart.append("g")

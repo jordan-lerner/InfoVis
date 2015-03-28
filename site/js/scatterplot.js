@@ -5,7 +5,7 @@
 <!-- CHANGE GP TO SALARY variable ( search and replace )-->
 
 var filter = 'SAT';
-
+var tooltip1;
 function filterUpdate(value){
   filter = value;
 }
@@ -48,9 +48,9 @@ playerChart = d3.select("#area2").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+	d3.select("#area5").select(".tooltip1").remove();
 // add the tooltip1 area to the webpage
-var tooltip1 = d3.select("#area5").append("div")
+tooltip1 = d3.select("#area5").append("div")
     .attr("class", "tooltip1")
     .style("opacity", 0);
 	
@@ -67,7 +67,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
 
   // don't want dots overlapping axis, so add in buffer to data domain
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([-460, 360]);
+  yScale.domain([-460, 400]);
 
   // x-axis
   playerChart.append("g")
