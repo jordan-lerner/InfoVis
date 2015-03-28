@@ -103,7 +103,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Value");
+      .text(filter);
 
   // draw dots
   playerChart.selectAll(".dot")
