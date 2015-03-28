@@ -171,7 +171,7 @@ function mode(value) {
           document.getElementById("legend2").style.display = 'block';
           return;
         }
-        if (teams.indexOf("" + passingName) >= 0) {
+        if (teams.indexOf("" + passingName2) >= 0) {
           tradePlot = scatterplotGraph2(passingName2);
           document.getElementById("legend2").style.display = 'block';
         }
