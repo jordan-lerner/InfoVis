@@ -163,7 +163,7 @@ function mode(value) {
 
       function zoomIn(p) {
         passingName2 = p.key.split(".").slice(-1);
-        var Userlocation = document.getElementById("Userlocation");
+        var Userlocation = document.getElementById("Userlocation2");
         Userlocation.innerHTML = passingName2;
         if (p.depth > 1) p = p.parent;
         if (!p.children) {
