@@ -128,7 +128,7 @@ function scatterplotGraph2(passingName2) {
         tooltip2.transition()
           .duration(200)
           .style("opacity", 1);
-        tooltip2.html(d["Player"] + "<br/> (" + compareFilter + ": " + yValue(d) + ", GP: " + xValue(d) + ")")
+        tooltip2.html(d["Player"] + "<br/> (" + compareFilter + ": " + yValue(d) + ", Salary: " + xValue(d) + ")")
           .style("left", (d3.event.pageX + 5) + "px")
           .style("top", (d3.event.pageY - 28) + "px");
       })
