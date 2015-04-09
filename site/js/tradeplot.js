@@ -2,7 +2,7 @@
 <!-- TradePlot stuff below -->
 <!-- **********************-->
 
-<!-- CHANGE GP TO SALARY variable ( search and replace )-->
+<!-- CHANGE SALARY variable ( search and replace )-->
 <!-- CHANGE Pos TO tradeplayer variable ( search and replace )-->
 
 compareFilter = "SAT"
@@ -36,7 +36,7 @@ function scatterplotGraph2(passingName2) {
 
   // setup x 
   var xValue = function(d) {
-      return d["GP"];
+      return d["Salary"];
     }, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) {
@@ -81,12 +81,12 @@ function scatterplotGraph2(passingName2) {
     // change string (from CSV) into number format
     data.forEach(function(d) {
       d[compareFilter] = +d[compareFilter];
-      d["GP"] = +d["GP"];
+      d["Salary"] = +d["Salary"]/1000000;
       //    console.log(d);
     });
 
     // don't want dots overlapping axis, so add in buffer to data domain
-    xScale.domain([d3.min(data, xValue) - 1, d3.max(data, xValue) + 1]);
+    xScale.domain([d3.min(data, xValue), d3.max(data, xValue) + 1]);
     yScale.domain([filter_scale[compareFilter]['min'], filter_scale[compareFilter]['max']]);
 
     // x-axis
@@ -99,7 +99,7 @@ function scatterplotGraph2(passingName2) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("Salary");
+      .text("Salary (In Millions)");
 
     // y-axis
     compareChart.append("g")
@@ -128,7 +128,8 @@ function scatterplotGraph2(passingName2) {
         tooltip2.transition()
           .duration(200)
           .style("opacity", 1);
-        tooltip2.html(d["Player"] + "<br/> (" + compareFilter + ": " + yValue(d) + ", Salary: " + xValue(d) + ")")
+        tooltip2.html(d["Player"] + "<br/> (" + compareFilter + ": " + yValue(d) 
+          + ", Salary: $" + numberWithSpaces(xValue(d)*1000000) + ")")
           .style("left", (d3.event.pageX + 5) + "px")
           .style("top", (d3.event.pageY - 28) + "px");
       })
