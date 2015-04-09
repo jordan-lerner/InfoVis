@@ -31,6 +31,7 @@ salaryTeams = [
 'Washington',
 'Winnipeg'
 ];
+total = 0
 for teamName in salaryTeams:
 	salaryDict = {}
 	with open(teamName+'Salary.csv', 'rb') as csvfile:
@@ -48,7 +49,16 @@ for teamName in salaryTeams:
 				salary = salary.replace(",", "")
 			except Exception, e:
 				5
-			salaryDict[row[0]] = salary
+
+			names = row[0].split(' ')
+			outName = ''
+			for n in names:
+				if n == names[-1]:
+					outName += n
+					continue
+				outName += n[0:2]
+			print outName
+			salaryDict[outName.upper()] = salary
 
 
 	output = []
@@ -60,12 +70,21 @@ for teamName in salaryTeams:
 				first = False
 				continue
 			out = ''
+			names = row[0].split(' ')
+			outName = ''
+			for n in names:
+				if n == names[-1]:
+					outName += n
+					continue
+				outName += n[0:2]
+			print outName
 			for r in row:
 				out += '"' + r + '"' + ','
 			try:
-				out += '"' + salaryDict[row[0]] + '"'
+				out += '"' + salaryDict[outName.upper()] + '"'
 			except Exception, e:
 	 			out += '"0"'
+	 			total += 1
 			output.append(out)
 
 	f = open('..\\'+ teamName+'.csv', 'w')
@@ -73,3 +92,5 @@ for teamName in salaryTeams:
 	for value in output:
 			f.write(value+'\n')
 	f.close()
+
+print total
