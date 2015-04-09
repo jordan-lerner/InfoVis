@@ -95,7 +95,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
   });
 
   // don't want dots overlapping axis, so add in buffer to data domain
-  xScale.domain([d3.min(data, xValue), d3.max(data, xValue)+1]);
+  xScale.domain([d3.min(data, xValue), 10]);
   yScale.domain([filter_scale[filter]['min'],filter_scale[filter]['max']]);
 
   // x-axis
