@@ -32,8 +32,8 @@ salaryTeams = [
 'Winnipeg'
 ];
 total = 0
+salaryDict = {}
 for teamName in salaryTeams:
-	salaryDict = {}
 	with open(teamName+'Salary.csv', 'rb') as csvfile:
 		salaryReader = csv.reader(csvfile, delimiter=',', quotechar='"')
 		first = True
@@ -57,7 +57,6 @@ for teamName in salaryTeams:
 					outName += n
 					continue
 				outName += n[0:2]
-			print outName
 			salaryDict[outName.upper()] = salary
 
 
@@ -77,7 +76,6 @@ for teamName in salaryTeams:
 					outName += n
 					continue
 				outName += n[0:2]
-			print outName
 			for r in row:
 				out += '"' + r + '"' + ','
 			try:
