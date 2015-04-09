@@ -5,208 +5,208 @@
       {  
          "name":"Atlantic",
          "description":"Division",
-         "fill":"#FFCE00",
+         "fill":"#f0ad4e",
          "children":[  
             {  
                "name":"Tampa Bay",
                "description":"Lightning",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Montreal",
                "description":"Canadians",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Detroit",
                "description":"Red Wings",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Boston",
                "description":"Bruins",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Florida",
                "description":"Panthers",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Toronto",
                "description":"Maple Leafs",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Ottawa",
                "description":"Senators",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             },
             {  
                "name":"Buffalo",
                "description":"Sabres",
                "size":1,
-               "fill":"#FFCE00"
+               "fill":"#f0ad4e"
             }
          ]
       },
       {  
          "name":"Metropolitan",
          "description":"Division",
-         "fill":"#980000",
+         "fill":"#d9534f",
          "children":[  
             {  
                "name":"NY Islanders",
                "description":"Islanders",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"Pittsburgh",
                "description":"Penguins",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"Washington",
                "description":"Capitals",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"NY Rangers",
                "description":"Rangers",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"Philadelphia",
                "description":"Flyers",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"Columbus",
                "description":"Blue Jackets",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"New Jersey",
                "description":"Devils",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             },
             {  
                "name":"Carolina",
                "description":"Hurricanes",
                "size":1,
-               "fill":"#980000"
+               "fill":"#d9534f"
             }
          ]
       },
       {  
          "name":"Central",
          "description":"Division",
-         "fill":"#006b3d",
+         "fill":"#5cb85c",
          "children":[  
             {  
                "name":"Nashville",
                "description":"Predators",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             },
             {  
                "name":"St Louis",
                "description":"Blues",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             },
             {  
                "name":"Chicago",
                "description":"Blackhawks",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             },
             {  
                "name":"Winnipeg",
                "description":"Jets",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             },
             {  
                "name":"Dallas",
                "description":"Stars",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             },
             {  
                "name":"Colorado",
                "description":"Avalanche",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             },
             {  
                "name":"Minnesota",
                "description":"Wild",
                "size":1,
-               "fill":"#006b3d"
+               "fill":"#5cb85c"
             }
          ]
       },
       {  
          "name":"Pacific",
          "description":"Division",
-         "fill":"#1A49B0",
+         "fill":"#337ab7",
          "children":[  
             {  
                "name":"Anaheim",
                "description":"Ducks",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             },
             {  
                "name":"Vancouver",
                "description":"Canucks",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             },
             {  
                "name":"San Jose",
                "description":"Sharks",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             },
             {  
                "name":"Calgary",
                "description":"Flames",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             },
             {  
                "name":"Los Angeles",
                "description":"Kings",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             },
             {  
                "name":"Arizona",
                "description":"Coyotes",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             },
             {  
                "name":"Edmonton",
                "description":"Oilers",
                "size":1,
-               "fill":"#1A49B0"
+               "fill":"#337ab7"
             }
          ]
       }

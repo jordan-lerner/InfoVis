@@ -97,16 +97,16 @@ html {
     border: 2px solid black;
 }
 .blue {
-    background-color: blue;
+    background-color: #337ab7;
 }
 .orange {
-    background-color: orange;
+    background-color: #f0ad4e;
 }
 .green {
-    background-color: green;
+    background-color: #5cb85c;
 }
 .red {
-    background-color: red;
+    background-color: #d9534f;
 }
 #GmMode {
     display: none;
