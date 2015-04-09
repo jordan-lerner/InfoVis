@@ -8,6 +8,10 @@ var margin = {
 
 var passingName;
 
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
 var teams = ["Anaheim",
   "Atlanta",
   "Boston",

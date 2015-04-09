@@ -39,7 +39,7 @@ var TeamStats = passingName;
  */ 
 
 // setup x 
-var xValue = function(d) { return d.GP;}, // data -> value
+var xValue = function(d) { return d.Salary;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
@@ -75,12 +75,12 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
   // change string (from CSV) into number format
   data.forEach(function(d) {
     d[filter] = +d[filter];
-    d["GP"] = +d["GP"];
+    d["Salary"] = +d["Salary"]/1000000;
 //    console.log(d);
   });
 
   // don't want dots overlapping axis, so add in buffer to data domain
-  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  xScale.domain([d3.min(data, xValue), d3.max(data, xValue)+1]);
   yScale.domain([filter_scale[filter]['min'],filter_scale[filter]['max']]);
 
   // x-axis
@@ -93,7 +93,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("Salary");
+      .text("Salary (In Millions)");
 
   // y-axis
   playerChart.append("g")
@@ -121,7 +121,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
                .duration(200)
                .style("opacity", 1);
           tooltip1.html(d["Player"] + "<br/> ("+filter+": " + yValue(d) 
-          + ", GP: " + xValue(d) + ")")
+          + ", Salary: $" + numberWithSpaces(xValue(d)*1000000) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
