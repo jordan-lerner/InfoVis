@@ -12,8 +12,25 @@ salaryTeams = [
 'Dallas',
 'Detroit',
 'Edmonton',
-'Florida'
-]
+'Florida',
+'Los Angeles',
+'Minnesota',
+'Montreal',
+'Nashville',
+'New Jersey',
+'NY Islanders',
+'NY Rangers',
+'Ottawa',
+'Philadelphia',
+'Pittsburgh',
+'San Jose',
+'St Louis',
+'Tampa Bay',
+'Toronto',
+'Vancouver',
+'Washington',
+'Winnipeg'
+];
 for teamName in salaryTeams:
 	salaryDict = {}
 	with open(teamName+'Salary.csv', 'rb') as csvfile:
@@ -23,8 +40,14 @@ for teamName in salaryTeams:
 			if first:
 				first = False
 				continue
-			salary = row[1].replace("$", "")
-			salary = salary.replace(",", "")
+			try:
+				salary = row[1].replace("$", "")
+			except Exception, e:
+				5
+			try:
+				salary = salary.replace(",", "")
+			except Exception, e:
+				5
 			salaryDict[row[0]] = salary
 
 
