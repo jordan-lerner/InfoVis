@@ -136,7 +136,7 @@ d3.csv("data/teams/"+TeamStats+".csv", function(error, data) {
                .duration(200)
                .style("opacity", 1);
           tooltip1.html(d["Player"] + "<br/> ("+filter+": " + yValue(d) 
-          + ", Salary: $" + numberWithSpaces(xValue(d)*1000000) + ")")
+          + ", Salary: $" + numberWithSpaces(Math.floor(xValue(d)*1000000)) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
