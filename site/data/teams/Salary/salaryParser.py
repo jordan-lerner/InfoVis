@@ -29,7 +29,7 @@ for teamName in salaryTeams:
 
 
 	output = []
-	with open('..\\'+ teamName+'.csv', 'rb') as csvfile:
+	with open('..\\Team Stats - Backup\\'+ teamName+'.csv', 'rb') as csvfile:
 		statReader = csv.reader(csvfile, delimiter=',',quotechar='"')
 		first = True
 		for row in statReader:
