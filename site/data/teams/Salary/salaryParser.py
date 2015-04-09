@@ -42,7 +42,7 @@ for teamName in salaryTeams:
 			try:
 				out += '"' + salaryDict[row[0]] + '"'
 			except Exception, e:
-	 			out += '"null"'
+	 			out += '"0"'
 			output.append(out)
 
 	f = open('..\\'+ teamName+'.csv', 'w')
