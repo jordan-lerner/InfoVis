@@ -21,6 +21,21 @@ var filter_scale = {
     "min":0,
     "max":60,
     "fullName":"Goals"
+  },
+  "A": {
+    "min":0,
+    "max":70,
+    "fullName":"Assists"
+  },
+  "P": {
+    "min":0,
+    "max":105,
+    "fullName":"Points"
+  },
+  "GP": {
+    "min":20,
+    "max":85,
+    "fullName":"Games Played"
   }
 };
 
