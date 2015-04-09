@@ -83,6 +83,7 @@ for teamName in salaryTeams:
 			except Exception, e:
 	 			out += '"0"'
 	 			total += 1
+	 			continue
 			output.append(out)
 
 	f = open('..\\'+ teamName+'.csv', 'w')

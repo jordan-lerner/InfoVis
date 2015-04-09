@@ -1,7 +1,6 @@
 Player,Cur. Team,Pos,GP,G,A,P,SAT For,SAT Agst,SAT,SAT Rel%,SAT Rel60,SAT Tied,SAT Ahead,SAT Behind,SAT Close,Salary
 "Paul Stastny","Colorado","Center","71","25","35","60","970","967","3","4.1","7.1","-8","-50","61","-38","6600000"
 "Jamie McGinn","Colorado","Left Wing","79","19","19","38","954","1075","-121","0.5","-0.8","-14","-140","33","-9","1750000"
-"Steve Downie","Colorado","Right Wing","62","4","20","24","158","150","8","5.4","8.6","-3","1","10","23","0"
 "Nick Holden","Colorado","Defense","54","10","15","25","719","779","-60","1.5","2.4","5","-40","-25","-4","600000"
 "Nathan MacKinnon","Colorado","Center","82","24","39","63","1069","1214","-145","0","-1.1","-47","-69","-29","-85","925000"
 "John Mitchell","Colorado","Center","75","11","21","32","802","945","-143","-1.5","-3","-42","-98","-3","-42","1100000"
