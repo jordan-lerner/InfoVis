@@ -13,7 +13,7 @@ function numberWithSpaces(x) {
 }
 
 var teams = ["Anaheim",
-  "Atlanta",
+  "Arizona",
   "Boston",
   "Buffalo",
   "Carolina",
