@@ -1,0 +1,9 @@
+diff a/site/js/gmMode.js b/site/js/gmMode.js	(rejected hunks)
+@@ -163,7 +163,6 @@
+ 
+       function zoomIn(p) {
+         passingName2 = p.key.split(".").slice(-1);
+-        var Userlocation = document.getElementById("Userlocation");
+         var Userlocation = document.getElementById("Userlocation2");
+         Userlocation.innerHTML = passingName2;
+         if (p.depth > 1) p = p.parent;
